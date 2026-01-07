@@ -67,6 +67,13 @@ NeuroAgent is an AI-powered chatbot designed specifically for neuroscience resea
 - **Filter neurons** by spatial and biological properties
 - **Examine circuit composition** and cellular characteristics
 
+Notes and implementation details:
+- The Circuit Population Analysis tool converts natural language questions into SQL SELECT queries and executes them against a loaded population table (DuckDB). The tool enforces a safety policy: only SELECT statements are permitted; non-SELECT or potentially destructive SQL (DROP, DELETE, INSERT, UPDATE, CREATE, ALTER, EXEC, etc.) are rejected.
+- The tool downloads circuit data from the platform's entity asset storage. It expects a SONATA-style circuit asset with a `circuit.gz` (compressed) file inside the entity's assets; absence of `circuit.gz` will cause the tool to fail to load the circuit population.
+- Generated SQL is executed locally (DuckDB) against the in-memory population DataFrame and results are returned (JSON). The tool registers the population as a table named `neurons` for SQL generation.
+- When asking questions to this tool, you should avoid repeating the population name in the question if you already supplied it via the `population_name` argument; the tool filters by that population before SQL generation.
+- The LLM used for SQL generation in the current implementation is gpt-4o-mini via an OpenAI-compatible client; token usage is tracked and available in metadata.
+
 ### 4. Brain Atlas and Anatomical Data
 
 #### Brain Region Exploration
