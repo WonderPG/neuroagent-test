@@ -60,6 +60,13 @@ NeuroAgent is an AI-powered chatbot designed specifically for neuroscience resea
 - **Execute machine learning tasks** using Scikit-learn
 - **Generate plots and charts** that display directly in the chat
 
+#### Utility Tools
+- **Calculator** — quick arithmetic and small numeric computations via an integrated Calculator tool.
+- **Random Number Generator** — produce reproducible or ad-hoc random numbers for simulations or testing.
+- **Text Reverser** — simple text-manipulation helper for reversing strings (useful in examples or debugging).
+
+These small utility tools are available alongside the sandboxed Python execution for quick tasks that don't require a full code run.
+
 #### Circuit Population Analysis
 - **Query circuit populations** using natural language
 - **Analyze neuron distributions** by cell type, layer, and region
