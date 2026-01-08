@@ -1,6 +1,5 @@
 """Tools package."""
 
-from neuroagent.tools.base64_tool import Base64Tool
 from neuroagent.tools.circuit_population_analysis_tool import (
     CircuitPopulationAnalysisTool,
 )
@@ -134,7 +133,6 @@ from neuroagent.tools.entitycore_strain_getall import StrainGetAllTool
 from neuroagent.tools.entitycore_strain_getone import StrainGetOneTool
 from neuroagent.tools.entitycore_subject_getall import SubjectGetAllTool
 from neuroagent.tools.entitycore_subject_getone import SubjectGetOneTool
-from neuroagent.tools.hash_tool import HashTool
 from neuroagent.tools.literature_search import LiteratureSearchTool
 from neuroagent.tools.obi_expert import OBIExpertTool
 from neuroagent.tools.obione_circuitconnectivitymetrics_getone import (
@@ -150,12 +148,14 @@ from neuroagent.tools.obione_generatesimulationsconfig import (
     GenerateSimulationsConfigTool,
 )
 from neuroagent.tools.obione_morphometrics_getone import MorphometricsGetOneTool
+from neuroagent.tools.qr_code import QrCodeTool
 from neuroagent.tools.read_paper import ReadPaperTool
 from neuroagent.tools.run_python_tool import RunPythonTool
 from neuroagent.tools.thumbnailgen_electricalcellrecording_getone import (
     PlotElectricalCellRecordingGetOneTool,
 )
 from neuroagent.tools.thumbnailgen_morphology_getone import PlotMorphologyGetOneTool
+from neuroagent.tools.url_shortener import UrlShortenerTool
 from neuroagent.tools.weather import WeatherTool
 from neuroagent.tools.web_search import WebSearchTool
 
@@ -163,7 +163,6 @@ __all__ = [
     "AssetDownloadOneTool",
     "AssetGetAllTool",
     "AssetGetOneTool",
-    "Base64Tool",
     "BrainAtlasGetAllTool",
     "BrainAtlasGetOneTool",
     "BrainRegionGetAllTool",
@@ -196,7 +195,6 @@ __all__ = [
     "ExperimentalSynapsesPerConnectionGetAllTool",
     "ExperimentalSynapsesPerConnectionGetOneTool",
     "GenerateSimulationsConfigTool",
-    "HashTool",
     "IonChannelGetAllTool",
     "IonChannelGetOneTool",
     "IonChannelModelGetAllTool",
@@ -218,6 +216,7 @@ __all__ = [
     "PersonGetOneTool",
     "PlotElectricalCellRecordingGetOneTool",
     "PlotMorphologyGetOneTool",
+    "QrCodeTool",
     "RunPythonTool",
     "ReadPaperTool",
     "SimulationCampaignGetAllTool",
@@ -242,6 +241,7 @@ __all__ = [
     "StrainGetOneTool",
     "SubjectGetAllTool",
     "SubjectGetOneTool",
+    "UrlShortenerTool",
     "WeatherTool",
     "WebSearchTool",
 ]
