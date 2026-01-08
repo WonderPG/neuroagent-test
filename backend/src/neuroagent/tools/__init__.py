@@ -4,6 +4,7 @@ from neuroagent.tools.calculator import CalculatorTool
 from neuroagent.tools.circuit_population_analysis_tool import (
     CircuitPopulationAnalysisTool,
 )
+from neuroagent.tools.coin_flip import CoinFlipTool
 from neuroagent.tools.color_generator import ColorTool
 from neuroagent.tools.context_analyzer_tool import ContextAnalyzerTool
 from neuroagent.tools.dice_roller import DiceTool
@@ -182,6 +183,7 @@ __all__ = [
     "CircuitMetricGetOneTool",
     "CircuitNodesetsGetOneTool",
     "CircuitPopulationGetOneTool",
+    "CoinFlipTool",
     "ContributionGetAllTool",
     "ContributionGetOneTool",
     "ContextAnalyzerTool",
