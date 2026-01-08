@@ -1,5 +1,6 @@
 """Tools package."""
 
+from neuroagent.tools.calculator import CalculatorTool
 from neuroagent.tools.circuit_population_analysis_tool import (
     CircuitPopulationAnalysisTool,
 )
@@ -148,14 +149,12 @@ from neuroagent.tools.obione_generatesimulationsconfig import (
     GenerateSimulationsConfigTool,
 )
 from neuroagent.tools.obione_morphometrics_getone import MorphometricsGetOneTool
-from neuroagent.tools.qr_code import QrCodeTool
 from neuroagent.tools.read_paper import ReadPaperTool
 from neuroagent.tools.run_python_tool import RunPythonTool
 from neuroagent.tools.thumbnailgen_electricalcellrecording_getone import (
     PlotElectricalCellRecordingGetOneTool,
 )
 from neuroagent.tools.thumbnailgen_morphology_getone import PlotMorphologyGetOneTool
-from neuroagent.tools.url_shortener import UrlShortenerTool
 from neuroagent.tools.weather import WeatherTool
 from neuroagent.tools.web_search import WebSearchTool
 
@@ -169,6 +168,7 @@ __all__ = [
     "BrainRegionGetOneTool",
     "BrainRegionHierarchyGetAllTool",
     "BrainRegionHierarchyGetOneTool",
+    "CalculatorTool",
     "CellMorphologyGetAllTool",
     "CellMorphologyGetOneTool",
     "CircuitConnectivityMetricsGetOneTool",
@@ -216,7 +216,6 @@ __all__ = [
     "PersonGetOneTool",
     "PlotElectricalCellRecordingGetOneTool",
     "PlotMorphologyGetOneTool",
-    "QrCodeTool",
     "RunPythonTool",
     "ReadPaperTool",
     "SimulationCampaignGetAllTool",
@@ -241,7 +240,6 @@ __all__ = [
     "StrainGetOneTool",
     "SubjectGetAllTool",
     "SubjectGetOneTool",
-    "UrlShortenerTool",
     "WeatherTool",
     "WebSearchTool",
 ]
