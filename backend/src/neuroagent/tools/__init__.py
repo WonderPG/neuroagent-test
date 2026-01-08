@@ -1,13 +1,10 @@
 """Tools package."""
 
-from neuroagent.tools.calculator import CalculatorTool
+from neuroagent.tools.base64_tool import Base64Tool
 from neuroagent.tools.circuit_population_analysis_tool import (
     CircuitPopulationAnalysisTool,
 )
-from neuroagent.tools.coin_flip import CoinFlipTool
-from neuroagent.tools.color_generator import ColorTool
 from neuroagent.tools.context_analyzer_tool import ContextAnalyzerTool
-from neuroagent.tools.dice_roller import DiceTool
 from neuroagent.tools.entitycore_asset_downloadone import AssetDownloadOneTool
 from neuroagent.tools.entitycore_asset_getall import AssetGetAllTool
 from neuroagent.tools.entitycore_asset_getone import AssetGetOneTool
@@ -137,6 +134,7 @@ from neuroagent.tools.entitycore_strain_getall import StrainGetAllTool
 from neuroagent.tools.entitycore_strain_getone import StrainGetOneTool
 from neuroagent.tools.entitycore_subject_getall import SubjectGetAllTool
 from neuroagent.tools.entitycore_subject_getone import SubjectGetOneTool
+from neuroagent.tools.hash_tool import HashTool
 from neuroagent.tools.literature_search import LiteratureSearchTool
 from neuroagent.tools.obi_expert import OBIExpertTool
 from neuroagent.tools.obione_circuitconnectivitymetrics_getone import (
@@ -152,13 +150,11 @@ from neuroagent.tools.obione_generatesimulationsconfig import (
     GenerateSimulationsConfigTool,
 )
 from neuroagent.tools.obione_morphometrics_getone import MorphometricsGetOneTool
-from neuroagent.tools.random_number import RandomNumberTool
 from neuroagent.tools.read_paper import ReadPaperTool
 from neuroagent.tools.run_python_tool import RunPythonTool
 from neuroagent.tools.thumbnailgen_electricalcellrecording_getone import (
     PlotElectricalCellRecordingGetOneTool,
 )
-from neuroagent.tools.timestamp import TimestampTool
 from neuroagent.tools.thumbnailgen_morphology_getone import PlotMorphologyGetOneTool
 from neuroagent.tools.weather import WeatherTool
 from neuroagent.tools.web_search import WebSearchTool
@@ -167,14 +163,13 @@ __all__ = [
     "AssetDownloadOneTool",
     "AssetGetAllTool",
     "AssetGetOneTool",
+    "Base64Tool",
     "BrainAtlasGetAllTool",
     "BrainAtlasGetOneTool",
     "BrainRegionGetAllTool",
     "BrainRegionGetOneTool",
     "BrainRegionHierarchyGetAllTool",
     "BrainRegionHierarchyGetOneTool",
-    "CalculatorTool",
-    "ColorTool",
     "CellMorphologyGetAllTool",
     "CellMorphologyGetOneTool",
     "CircuitConnectivityMetricsGetOneTool",
@@ -183,12 +178,10 @@ __all__ = [
     "CircuitMetricGetOneTool",
     "CircuitNodesetsGetOneTool",
     "CircuitPopulationGetOneTool",
-    "CoinFlipTool",
     "ContributionGetAllTool",
     "ContributionGetOneTool",
     "ContextAnalyzerTool",
     "CircuitPopulationAnalysisTool",
-    "DiceTool",
     "ElectricalCellRecordingGetAllTool",
     "ElectricalCellRecordingGetOneTool",
     "EModelGetAllTool",
@@ -203,6 +196,7 @@ __all__ = [
     "ExperimentalSynapsesPerConnectionGetAllTool",
     "ExperimentalSynapsesPerConnectionGetOneTool",
     "GenerateSimulationsConfigTool",
+    "HashTool",
     "IonChannelGetAllTool",
     "IonChannelGetOneTool",
     "IonChannelModelGetAllTool",
@@ -224,7 +218,6 @@ __all__ = [
     "PersonGetOneTool",
     "PlotElectricalCellRecordingGetOneTool",
     "PlotMorphologyGetOneTool",
-    "RandomNumberTool",
     "RunPythonTool",
     "ReadPaperTool",
     "SimulationCampaignGetAllTool",
@@ -249,7 +242,6 @@ __all__ = [
     "StrainGetOneTool",
     "SubjectGetAllTool",
     "SubjectGetOneTool",
-    "TimestampTool",
     "WeatherTool",
     "WebSearchTool",
 ]
