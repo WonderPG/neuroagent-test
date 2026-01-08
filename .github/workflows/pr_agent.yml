@@ -1,0 +1,24 @@
+name: PR Agent
+on:
+  pull_request:
+    types: [ready_for_review]
+  issue_comment:
+jobs:
+  pr_agent_job:
+    if: ${{ github.event.sender.type != 'Bot' }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+      contents: write
+    steps:
+      - name: PR Agent action step
+        uses: qodo-ai/pr-agent@main
+        env:
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Enable/disable automatic tools
+          github_action_config.auto_review: "false"
+          github_action_config.auto_describe: "false"
+          github_action_config.auto_improve: "true"
+          pr_reviewer.extra_instructions: "You are meant to only update the file docs/neuroagent-doc.md. Consider the changes made in this PR, and suggest documentation update. The goal of this documentation is to serve as a knowledge base for question answering. It is used inside the Open Brain Platform's AI and is meant to answer the questions of the end user ABOUT THE CHAT EMBEDDED IN THE PLATFORM. Suggest improvements that would answer potential user's questions related to what it can do/can't do with the chat. Do not document technical information that is not end user facing. If you estimate that no documentation update is needed, do not suggest documentation update."
