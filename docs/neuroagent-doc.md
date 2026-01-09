@@ -39,6 +39,8 @@ Search and analyze research papers:
 - **Ion Channels & Recordings**: Access electrophysiological data and channel properties
 - **Experimental Data**: Query bouton densities, neuron densities, synaptic connections
 
+Note: EntityCore-backed queries are used for direct database lookups (e.g., retrieving IDs, listings, or direct platform data). These are intended for direct data access rather than general-purpose knowledge.
+
 ### **Analysis & Computation**
 - **Python Execution**: Run custom analysis with NumPy, Pandas, SciPy, Plotly
 - **Circuit Analysis**: Analyze population dynamics and connectivity metrics
@@ -79,11 +81,15 @@ The AI automatically selects and chains appropriate tools:
 
 ### Tool-calling behavior and brief reasoning
 - Before any tool call in a multi-step process, the assistant will include a concise (1–2 line) rationale for the next action or tool selection to clarify intent.
+- When user intent is clear, the assistant proceeds with tool calls without unnecessary confirmations; it defaults to taking action rather than seeking confirmation.
 - The assistant avoids explicit self-referential phrases like "I'll generate" or "I'll search"; instead it presents the reasoning as part of the natural narrative.
+- The assistant will refuse or avoid tool calls that would generate excessive outputs or resource-intensive operations (e.g., massive loops, extremely large file processing, or operations producing voluminous output).
 - Tool outputs are authoritative for answers derived from tools; the assistant will not invent or add information beyond the tool output.
 
 ### UI & Platform Questions
-- The assistant does not have access to the platform's UI layout or interactive elements and cannot provide step-by-step navigation of the UI. For questions about where items appear in the interface, please consult platform help resources or contact support.
+- The assistant does not have access to the platform's UI layout or interactive elements and cannot provide step-by-step navigation of the UI.
+- For platform-related or glossary-like questions, the assistant uses specialized internal tools (for example, an "obi-expert" tool) to retrieve authoritative guidance; it may also use a context-analyzer tool to determine a user's current view when available.
+- Responses about the platform must be restricted to information explicitly provided by those tools. For questions about where items appear in the interface, please consult platform help resources or contact support.
 
 ## Key Features
 
@@ -157,3 +163,4 @@ Results come from curated neuroscience databases including:
 - Use literature search to understand current knowledge
 - Combine multiple data sources for comprehensive analysis
 - Generate hypotheses based on integrated findings
+
