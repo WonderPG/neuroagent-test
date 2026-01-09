@@ -42,6 +42,7 @@ Search and analyze research papers:
 ### **Analysis & Computation**
 - **Python Execution**: Run custom analysis with NumPy, Pandas, SciPy, Plotly
 - **Circuit Analysis**: Analyze population dynamics and connectivity metrics
+  - Note: For circuit population analysis, the assistant supplies the population filter separately from your question. Do NOT include the population name in the natural-language question (the tool receives the population name as a separate parameter). The circuit analysis tool converts your question into a SQL SELECT query and executes it; only read-only SELECT queries are allowed and some SQL operations (e.g., DROP, DELETE, INSERT, UPDATE, CREATE, ALTER, EXEC) are prohibited for safety.
 - **Morphometrics**: Measure cellular properties and structural features
 - **Electrophysiology**: Process and analyze electrical recordings
 
@@ -75,6 +76,14 @@ The AI automatically selects and chains appropriate tools:
 - Literature search → Paper analysis → Data visualization
 - Data retrieval → Statistical analysis → Plot generation
 - Morphology query → 3D visualization → Measurement analysis
+
+### Tool-calling behavior and brief reasoning
+- Before any tool call in a multi-step process, the assistant will include a concise (1–2 line) rationale for the next action or tool selection to clarify intent.
+- The assistant avoids explicit self-referential phrases like "I'll generate" or "I'll search"; instead it presents the reasoning as part of the natural narrative.
+- Tool outputs are authoritative for answers derived from tools; the assistant will not invent or add information beyond the tool output.
+
+### UI & Platform Questions
+- The assistant does not have access to the platform's UI layout or interactive elements and cannot provide step-by-step navigation of the UI. For questions about where items appear in the interface, please consult platform help resources or contact support.
 
 ## Key Features
 
