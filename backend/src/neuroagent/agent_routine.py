@@ -36,7 +36,7 @@ from neuroagent.utils import (
 
 logger = logging.getLogger(__name__)
 
-
+# GReat class
 class AgentsRoutine:
     """Agents routine class. Wrapper for all the functions running the agent."""
 
